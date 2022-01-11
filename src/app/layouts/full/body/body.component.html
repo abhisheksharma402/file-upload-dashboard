@@ -42,6 +42,21 @@
     <div>{{file_not_selected || successMessage || errorMessage}}</div>
 
     <div *ngIf="successMessage">
+      <form>
+        <label for="cars">Choose a graph:</label>
+        <select id="cars" name="cars" (change)="onChange($event)">
+          <option value="">--Choose Type--</option>
+          <option value="bar-chart">Bar Chart</option>
+          <option value="line-chart">Line Chart</option>
+          <option value="pie-chart">Pie Chart</option>
+
+          <!-- <option value="audi">Audi</option> -->
+        </select>
+        <!-- <input type="submit"> -->
+      </form>
+    </div>
+
+    <div *ngIf="successMessage">
         <div
         echarts
         [options]="options"
